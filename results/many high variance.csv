@@ -1,0 +1,10 @@
+instance,jobs,gurobi interrupted,bnb interrupted,gurobiSolution,bnbSolution,gurobiTime,bnbTime
+instances/many high variance\instance_M_HH_0,98,True,False,98023.0,96959,10.0121,5.734
+instances/many high variance\instance_M_HH_1,108,True,True,117805.0,118324,10.0331,10.0
+instances/many high variance\instance_M_HH_2,120,True,True,140455.0,139575,10.0197,10.0
+instances/many high variance\instance_M_HU_0,96,True,True,inf,49937,10.0083,10.0
+instances/many high variance\instance_M_HU_1,109,True,True,inf,61052,10.019,10.0
+instances/many high variance\instance_M_HU_2,120,True,True,inf,81121,10.065,10.0
+instances/many high variance\instance_M_UH_0,99,False,False,90988.0,90988,5.9475,4.2032
+instances/many high variance\instance_M_UH_1,108,False,False,111683.0,111682,6.2536,4.6208
+instances/many high variance\instance_M_UH_2,120,True,False,147115.0,146176,10.0327,2.7535

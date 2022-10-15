@@ -1,0 +1,16 @@
+instance,jobs,gurobi interrupted,bnb interrupted,gurobiSolution,bnbSolution,gurobiTime,bnbTime
+instances/many low variance\instance_M_HL_0,100,True,True,inf,70303,10.0098,10.0
+instances/many low variance\instance_M_HL_1,110,True,True,inf,86798,10.0578,10.0
+instances/many low variance\instance_M_HL_2,120,True,True,inf,101783,10.0192,10.0
+instances/many low variance\instance_M_LH_0,99,True,False,95135.0,95046,10.0112,0.2102
+instances/many low variance\instance_M_LH_1,109,True,False,102737.0,102647,10.0131,0.4909
+instances/many low variance\instance_M_LH_2,119,True,False,149765.0,149300,10.0392,0.3499
+instances/many low variance\instance_M_LL_0,100,True,False,70143.0,69935,10.0064,0.2181
+instances/many low variance\instance_M_LL_1,110,True,False,87901.0,86622,10.0386,0.2645
+instances/many low variance\instance_M_LL_2,120,True,False,inf,102115,10.0103,0.3247
+instances/many low variance\instance_M_LU_0,91,True,False,43478.0,43392,10.0093,0.1709
+instances/many low variance\instance_M_LU_1,105,True,False,53692.0,53649,10.0093,0.2293
+instances/many low variance\instance_M_LU_2,119,True,False,69616.0,69508,10.04,0.31
+instances/many low variance\instance_M_UL_0,100,True,False,70760.0,70675,10.0161,2.6951
+instances/many low variance\instance_M_UL_1,110,True,False,inf,84983,10.0192,2.0079
+instances/many low variance\instance_M_UL_2,120,True,False,inf,100279,10.0118,4.6674

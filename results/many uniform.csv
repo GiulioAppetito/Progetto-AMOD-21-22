@@ -1,0 +1,4 @@
+instance,jobs,gurobi interrupted,bnb interrupted,gurobiSolution,bnbSolution,gurobiTime,bnbTime
+instances/many uniform\instance_M_UU_0,97,True,True,43978.0,44319,10.0132,10.0
+instances/many uniform\instance_M_UU_1,109,True,True,65182.0,65302,10.032,10.0
+instances/many uniform\instance_M_UU_2,117,True,True,63811.0,64322,10.0165,10.0

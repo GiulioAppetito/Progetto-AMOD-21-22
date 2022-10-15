@@ -1,0 +1,4 @@
+instance,jobs,gurobi interrupted,bnb interrupted,gurobiSolution,bnbSolution,gurobiTime,bnbTime
+instances/many close to zero\instance_0,93,False,False,43941.0,43941,2.4376,0.0016
+instances/many close to zero\instance_1,106,False,False,61972.0,61972,2.8576,0.0019
+instances/many close to zero\instance_2,117,False,False,70469.0,70469,4.8682,0.0022

@@ -1,5 +1,7 @@
 import csv
+import math
 import os
+
 from BranchAndBound import BranchAndBound
 from SchedulingProblem import SchedulingProblem
 from Timer import Timer
@@ -18,51 +20,78 @@ class bcolors:
     UNDERLINE = '\033[4m'
 
 
-APX_CYPHERS = 5  # round cyphers
-FILENAME = "results.csv"  # file to print results
-LIMIT = 20  # time limit for each instance of BnB
+APX_CYPHERS = 4  # round cyphers
 
-# create the csv writer.
-f = open(FILENAME, "w", newline="")
-writer = csv.writer(f)
-writer.writerow(["filename", "# jobs", "bnb interrupted", "gurobi solution", "bnb solution", "gurobi time", "bnb time", "release dates",
-                 "processing times"])
+name = 0
 
-# traverse root directory, and list directories as dirs and files as files
-filesNames = []
-for root, d_names, f_names in os.walk("instances"):
-    for f in f_names:
-        filesNames.append(os.path.join(root, f))
-for filename in filesNames:
-    print(bcolors.WARNING + filename + bcolors.ENDC)
-    # instance creation.
-    r = []
-    p = []
-    with open(filename) as csv_file:
-        csv_reader = csv.reader(csv_file, delimiter=',')
-        for row in csv_reader:
-            r.append(int(row[0]))
-            p.append(int(row[1]))
-        gurobiProblem = SchedulingProblem(r, p)
-        bnbProblem = BranchAndBound(r, p)
 
-        # gurobi execution.
-        timer = Timer()
-        timer.start()
-        gurobiSolution = gurobiProblem.solve()
-        gurobiTime = timer.stop()
+def main():
+    global limit
+    limit = float(input("Set time limit for execution [sec] : "))
 
-        # BnB execution.
-        interrupted = False
-        try:
-            timer = Timer()
-            timer.start()
-            bnbSolution = func_timeout(LIMIT, bnbProblem.solve)
-            bnbTime = timer.stop()
-        except FunctionTimedOut:
-            bnbSolution = bnbProblem.getIncumbent()
-            bnbTime = LIMIT
-            interrupted = True
+    # traverse root directory, and list directories as dirs and files as files
+    filenames = []
+    directories = []
+    for root, d_names, f_names in os.walk("instances"):
+        for d in d_names:
+            directories.append(d)
+    print(bcolors.OKGREEN)
+    for directory in directories:
+        print(directory)
+    print(bcolors.ENDC)
 
-        # write on file.
-        writer.writerow([filename, len(r),interrupted, gurobiSolution, bnbSolution, gurobiTime, bnbTime, r, p])
+    for directory in directories:
+        filenames = []
+        with open("results/" + directory + ".csv", 'w') as results_directory:
+            directory_csv_writer = csv.writer(results_directory)
+            directory_csv_writer.writerow(
+                ["instance", "jobs", "gurobi interrupted", "bnb interrupted", "gurobiSolution", "bnbSolution", "gurobiTime", "bnbTime"])
+
+            for root, d_names, f_names in os.walk("instances/" + directory):
+                for f in f_names:
+                    filenames.append(os.path.join(root, f))
+            for instance in filenames:
+                print(bcolors.WARNING + instance + bcolors.ENDC)
+                # instance creation.
+                r = []
+                p = []
+
+                with open(instance) as instance_csv_file:
+                    bnbInterrupted = False
+                    gurobiInterrupted = False
+                    instance_csv_reader = csv.reader(instance_csv_file, delimiter=',')
+                    for row in instance_csv_reader:
+                        r.append(int(row[0]))
+                        p.append(int(row[1]))
+                    gurobiProblem = SchedulingProblem(r, p, limit)
+                    bnbProblem = BranchAndBound(r, p)
+
+                    # gurobi execution.
+                    timer = Timer()
+                    timer.start()
+                    gurobiProblem.solve()
+                    gurobiTime = timer.stop()
+                    if gurobiTime >= limit:
+                        gurobiInterrupted = True
+                    gurobiSolution = gurobiProblem.getObjFunVal()
+                    # BnB execution.
+
+                    try:
+                        timer = Timer()
+                        timer.start()
+                        bnbSolution = func_timeout(limit, bnbProblem.solve)
+                        #bnbSolution = bnbProblem.solve()
+                        bnbTime = timer.stop()
+                    except FunctionTimedOut:
+                        bnbSolution = bnbProblem.getIncumbent()
+                        bnbTime = limit
+                        bnbInterrupted = True
+
+                    # write on file.
+                    directory_csv_writer.writerow(
+                        [instance, len(r), gurobiInterrupted, bnbInterrupted, gurobiSolution, bnbSolution,
+                         round(gurobiTime, APX_CYPHERS), round(bnbTime, APX_CYPHERS)])
+                    instance_csv_file.close()
+
+
+main()

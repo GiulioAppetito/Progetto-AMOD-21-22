@@ -3,7 +3,7 @@ from gurobipy import GRB
 
 
 class SchedulingProblem:
-    def __init__(self, release_times, processing_times):
+    def __init__(self, release_times, processing_times, time_limit):
         self.r = []
         self.p = []
         for i in range(len(release_times)):
@@ -13,8 +13,11 @@ class SchedulingProblem:
         J = range(len(self.r))
 
         # model
-        self.m = gp.Model("Scheduling")
-        self.m.setParam('TimeLimit', 1)
+        env = gp.Env(empty=True)
+        env.setParam('OutputFlag', 0)
+        env.start()
+        self.m = gp.Model("Scheduling", env = env)
+        self.m.setParam('TimeLimit', time_limit)
 
         # variables
         x = self.m.addVars(J, J, vtype=GRB.BINARY, name="x")
@@ -33,4 +36,6 @@ class SchedulingProblem:
 
     def solve(self):
         self.m.optimize()
+
+    def getObjFunVal(self):
         return self.m.getAttr("ObjVal")
