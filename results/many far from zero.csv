@@ -1,4 +1,11 @@
 instance,jobs,gurobi interrupted,bnb interrupted,gurobiSolution,bnbSolution,gurobiTime,bnbTime
-instances/many far from zero\instance_0,96,True,True,53225.0,53476,10.0031,10.0
-instances/many far from zero\instance_1,104,True,True,57373.0,57627,10.0488,10.0
-instances/many far from zero\instance_2,115,True,True,79607.0,79724,10.0338,10.0
+instances/many far from zero\instance_0,97,True,True,55227.0,55412,60.0145,60.0
+instances/many far from zero\instance_1,107,False,True,61120.0,61493,28.1236,60.0
+instances/many far from zero\instance_2,115,True,True,76652.0,77277,60.0324,60.0
+instances/many far from zero\instance_3,125,True,True,89858.0,89952,60.032,60.0
+instances/many far from zero\instance_4,131,False,True,91847.0,92706,21.0191,60.0
+instances/many far from zero\instance_5,147,True,True,123443.0,123968,60.0412,60.0
+instances/many far from zero\instance_6,154,True,True,126153.0,127092,60.0414,60.0
+instances/many far from zero\instance_7,164,True,True,136151.0,136828,60.0363,60.0
+instances/many far from zero\instance_8,177,True,True,inf,174171,60.0363,60.0
+instances/many far from zero\instance_9,185,True,True,inf,205844,60.0332,60.0

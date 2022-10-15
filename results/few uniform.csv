@@ -1,4 +1,11 @@
 instance,jobs,gurobi interrupted,bnb interrupted,gurobiSolution,bnbSolution,gurobiTime,bnbTime
-instances/few uniform\instance_F_UU_0,10,False,False,1092.0,1092,0.5947,0.0021
-instances/few uniform\instance_F_UU_1,12,False,True,940.0,inf,3.394,10.0
-instances/few uniform\instance_F_UU_2,13,False,False,902.0,902,0.3804,0.0091
+instances/few uniform\instance_F_UU_0,10,False,False,426.0,426,0.2561,0.0051
+instances/few uniform\instance_F_UU_1,11,False,False,790.0,790,0.3958,0.0119
+instances/few uniform\instance_F_UU_2,14,False,False,895.0,895,0.2301,0.0329
+instances/few uniform\instance_F_UU_3,15,False,False,1746.0,1746,1.4453,0.0098
+instances/few uniform\instance_F_UU_4,17,False,False,1852.0,1852,0.2685,0.0294
+instances/few uniform\instance_F_UU_5,19,False,False,1955.0,1955,0.3458,0.0826
+instances/few uniform\instance_F_UU_6,21,True,False,2563.0,2563,60.0189,0.3217
+instances/few uniform\instance_F_UU_7,23,False,False,3345.0,3345,0.34,0.1074
+instances/few uniform\instance_F_UU_8,25,False,False,3277.0,3277,2.5121,0.2355
+instances/few uniform\instance_F_UU_9,27,True,False,4254.0,4254,60.002,0.3742
