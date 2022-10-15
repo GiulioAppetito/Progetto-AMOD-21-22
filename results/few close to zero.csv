@@ -1,4 +1,11 @@
 instance,jobs,gurobi interrupted,bnb interrupted,gurobiSolution,bnbSolution,gurobiTime,bnbTime
-instances/few close to zero\instance_0,10,False,False,767.0,767,0.0087,0.0017
-instances/few close to zero\instance_1,11,False,False,892.0,892,0.0936,0.0017
-instances/few close to zero\instance_2,13,False,False,804.0,804,0.1875,0.0021
+instances/few close to zero\instance_0,10,False,False,879.0,879,0.13,0.0019
+instances/few close to zero\instance_1,12,False,False,432.0,432,0.0306,0.002
+instances/few close to zero\instance_2,14,False,False,1403.0,1403,0.0142,0.0025
+instances/few close to zero\instance_3,16,False,False,1394.0,1394,2.0401,0.0032
+instances/few close to zero\instance_4,17,False,False,1924.0,1924,0.1289,0.0033
+instances/few close to zero\instance_5,20,False,False,1766.0,1766,0.0375,0.0005
+instances/few close to zero\instance_6,22,False,False,2206.0,2206,0.1497,0.0061
+instances/few close to zero\instance_7,24,False,False,2836.0,2836,0.0471,0.0005
+instances/few close to zero\instance_8,26,False,False,2825.0,2825,0.0623,0.0089
+instances/few close to zero\instance_9,28,False,False,4521.0,4521,3.8343,0.0105

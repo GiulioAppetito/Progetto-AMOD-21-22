@@ -1,7 +1,7 @@
 import numpy as np
 
 folder = 'instances'
-num_instances = 3
+num_instances = 10
 ub = 30
 lb = 0
 
