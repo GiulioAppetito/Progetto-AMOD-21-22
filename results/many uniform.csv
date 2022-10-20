@@ -1,11 +1,11 @@
 instance,jobs,gurobi interrupted,bnb interrupted,gurobiSolution,bnbSolution,gurobiTime,bnbTime
-instances/many uniform\instance_M_UU_0,98,True,False,61821.0,61439,60.014,25.717
-instances/many uniform\instance_M_UU_1,106,True,True,60582.0,60434,60.0175,60.0
-instances/many uniform\instance_M_UU_2,118,True,True,74589.0,74743,60.011,60.0
-instances/many uniform\instance_M_UU_3,126,True,True,79999.0,80303,60.0274,60.0
-instances/many uniform\instance_M_UU_4,137,True,True,inf,91694,60.025,60.0
-instances/many uniform\instance_M_UU_5,142,False,True,120405.0,121412,25.3566,60.0
-instances/many uniform\instance_M_UU_6,153,True,True,107512.0,108142,60.0318,60.0
-instances/many uniform\instance_M_UU_7,164,True,True,134148.0,134290,60.0487,60.0
-instances/many uniform\instance_M_UU_8,175,False,True,170216.0,170896,41.2596,60.0
-instances/many uniform\instance_M_UU_9,182,True,True,178907.0,178991,60.265,60.0
+instances/many uniform\instance_M_UU_0,50,True,False,12926.0,12862,10.0196,3.3983
+instances/many uniform\instance_M_UU_1,49,True,False,14098.0,14096,10.0025,0.7657
+instances/many uniform\instance_M_UU_2,51,True,False,13863.0,13756,10.0611,1.9877
+instances/many uniform\instance_M_UU_3,53,True,False,14089.0,14000,10.0151,6.6543
+instances/many uniform\instance_M_UU_4,54,True,False,15388.0,15388,10.052,3.7796
+instances/many uniform\instance_M_UU_5,54,True,True,13313.0,13390,10.0582,10.0
+instances/many uniform\instance_M_UU_6,54,True,False,14798.0,14798,10.0491,6.413
+instances/many uniform\instance_M_UU_7,54,False,False,16392.0,16392,1.4762,9.41
+instances/many uniform\instance_M_UU_8,56,True,False,15530.0,15425,10.0169,8.508
+instances/many uniform\instance_M_UU_9,57,True,True,18953.0,18960,10.0116,10.0

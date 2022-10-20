@@ -1,5 +1,6 @@
 import math
 import copy
+import datetime
 
 from Entities import Job
 from Timer import Timer
@@ -102,6 +103,7 @@ class BranchAndBound:
 
     # actual b&b
     def solve(self):
+        print("B&B execution, start : "+ str(datetime.datetime.now()))
         # solve the relaxed problem.
         root = Node([], self.jobs)
         result, preemptive = SRPTN(root, 0, 0)

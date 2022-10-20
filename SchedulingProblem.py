@@ -1,5 +1,6 @@
 import gurobipy as gp
 from gurobipy import GRB
+import datetime
 
 
 class SchedulingProblem:
@@ -17,7 +18,9 @@ class SchedulingProblem:
         env.setParam('OutputFlag', 0)
         env.start()
         self.m = gp.Model("Scheduling", env = env)
-        self.m.setParam('TimeLimit', time_limit)
+
+        if time_limit != 0:
+            self.m.setParam('TimeLimit', time_limit)
 
         # variables
         x = self.m.addVars(J, J, vtype=GRB.BINARY, name="x")
@@ -35,6 +38,7 @@ class SchedulingProblem:
         self.m.setObjective(gp.quicksum(s[j] + self.p[j] for j in J), GRB.MINIMIZE)
 
     def solve(self):
+        print("Gurobi execution, start : "+ str(datetime.datetime.now()))
         self.m.optimize()
 
     def getObjFunVal(self):
