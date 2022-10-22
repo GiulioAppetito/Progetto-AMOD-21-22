@@ -4,7 +4,7 @@ max_num_jobs = 30
 ub = 100
 lb = 0
 
-release_types = ["releasesCloseToZero", "releasesFarFromZero"]
+release_types = ["releasesCloseToZero", "releasesFarFromZero", "releasesLowVariance", "releasesUniform", "releasesHighVariance"]
 distributions = ["processingLowVariance", "processingUniform", "processingHighVariance"]
 
 
@@ -28,6 +28,12 @@ def generateInstance(num_jobs, lb, ub, r_distribution, p_distribution):
         releaseDates = np.random.default_rng().uniform(lb, ub, num_jobs) / 10
     elif r_distribution == "releasesFarFromZero":
         releaseDates = np.random.default_rng().uniform(lb, ub, num_jobs) + 50
+    elif r_distribution == "releasesLowVariance":
+        releaseDates = np.random.default_rng().normal((ub - lb) / 2, 1.0, num_jobs)
+    elif r_distribution == "releasesUniform":
+        releaseDates = np.random.default_rng().uniform(lb, ub, num_jobs)
+    elif r_distribution == "releasesHighVariance":
+        releaseDates = np.random.default_rng().normal((ub - lb) / 2 + 10.0, 30.0, num_jobs)
 
     if p_distribution == "processingLowVariance":
         processingTimes = np.random.default_rng().normal((ub - lb) / 2, 1.0, num_jobs)
